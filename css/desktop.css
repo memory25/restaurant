@@ -1,0 +1,523 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+
+html {
+	font-family: "微軟正黑體", "Microsoft JhengHei", sans-serif;
+    font-size: 62.5%;
+    position: relative;
+}
+
+
+/*--頂部導覽開始--*/
+#navTop {
+	background: rgba(0,0,0,0.75);
+	height: 56px;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 10;
+}
+
+#navTop .nameLogo {
+	margin: 16px 0 16px 42px;
+}
+
+.navTopMenu {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.navTopMenu ul {
+	list-style: none;
+	font-size: 1.6rem;
+	width: 100%;
+}
+
+.navTopMenu li {
+	float: left;
+	width: 80px;
+	text-align: center;
+}
+.navTopMenu a {
+	text-decoration: none;
+	display: block;
+	height: 56px;
+	line-height: 56px;
+	color: #FFFFFF;
+}
+
+.navTopMenu a:hover {
+	background: #979292;
+}
+
+/*正常版時隱藏選單*/
+.bars {
+	color: #FFFFFF;
+	font-size: 2.4rem;
+	display: none;
+	line-height: 0;
+	cursor: pointer;
+	position: absolute;
+	right: 22px;
+	top: 16px;
+}
+
+/*使用jquery click slide*/
+@media (max-width: 480px) {
+	.navTopMenu ul {
+		display: none;
+		-webkit-transform: translateY(56px);
+		        transform: translateY(56px); 
+	}
+	.navTopMenu ul li {
+		display: inline-block;
+		width: 100vw;
+		background: rgba(0,0,0,0.7);
+	}
+	.navTopMenu li a {
+		height: 2rem;
+		line-height: 2rem;
+	}
+	.bars {
+		display: inline-block;
+	}
+}
+
+
+/*--頂部導覽結束--*/
+
+/*--首頁圖片開始--*/
+header {
+    background: url(../images/header_desktop.png) no-repeat center;
+    background-size: cover;
+    min-height: 420px;
+    position: relative;
+}
+
+.homeText {
+    width: 460px;
+    height: 152px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    padding-top: ;
+    color: #FFFFFF;
+    text-align: center;
+    background: rgba(0,0,0,0.35);
+}
+
+.homeText h1 {
+    font-size: 3.6rem;
+    margin: 15px 0 5px 0;
+}
+
+.homeText p {
+    font-size: 1.6rem;
+    line-height: 30px;
+}
+
+@media (max-width: 480px) {
+	header {
+		background: url(../images/header_mobile.png) no-repeat center;
+	}
+	.homeText {
+		width: 300px;
+	}
+	.homeText span {
+		display: block;
+	}
+}
+/*--首頁圖片結束--*/
+
+/*--介紹開始--*/
+#introduce {
+	background: #EFE9E7;
+	padding: 50px 0;
+	color: #3D1101;
+}
+
+.introduceHeader {
+	width: 200px;
+	height: 64px;
+	font-size: 2rem;
+	margin: 0 auto;
+	text-align: center;
+	position: relative;
+}
+/*製作左右兩個橫線條*/
+.introduceHeader::before, .introduceHeader::after {
+	content: "";
+	width: 10rem;
+	height: 1px;
+	border-top: 1px solid #979797;
+	position: absolute;
+	top:50%;
+}
+
+.introduceHeader::before {
+	left: -70%;
+}
+.introduceHeader::after {
+	right: -70%;
+}
+
+.introduceMain {
+	width: 80%;
+	display: table;
+	table-layout: fixed;
+	margin: 50px auto 0;
+}
+
+.mainBox {
+	width: 100%;
+	display: table-cell;
+	text-align: center;
+	padding: 0 30px;
+}
+
+.mainBox img {
+	border-radius: 100%;
+	max-width: 100%;
+}
+
+.mainBox h2 {
+	font-size: 1.8rem;
+	margin: 20px 0 11px 0;
+}
+
+.mainBox p {
+	font-size: 1.6rem;
+	text-align: left;
+}
+
+@media (max-width: 480px) {
+	.introduceHeader::before, .introduceHeader::after {
+		display: none;
+	}
+	.introduceMain, .mainBox {
+		display: block;
+		margin: 0;
+	}
+	.mainBox {
+		margin-top: 30px;
+	}
+}
+
+/*--介紹結束--*/
+
+/*--本日主廚開始--*/
+#chef {
+	background: #3E1100;
+    color: #FFFFFF;
+}
+
+#chef .wrap {
+	width: 100%;
+	text-align: center;
+}
+
+.chefBox {
+	width: 45%;
+	display: inline-block;
+	text-align: left;
+}
+
+/*讓文字對齊圖片上方*/
+.chefBox:nth-of-type(2) {
+	width: 30%;
+	vertical-align: top;
+	padding-top: 80px;
+}
+
+
+#chef img {
+	max-width: 100%;
+	vertical-align: bottom;/*消除img下面會多出的一條線*/
+}
+
+
+#chef h2 {
+	font-size: 2rem;
+}
+
+#chef p {
+	font-size: 1.6rem;
+}
+
+#chef p:nth-of-type(1) {
+	margin-bottom: 16px;
+}
+
+@media (max-width: 480px) {
+	#chef {
+		background: #3E1100;
+		padding-bottom: 30px;
+	}
+	.chefBox {
+		width: 100%;
+		display: block;
+	}
+	.chefBox:nth-of-type(2) {
+	width: 100%;
+	vertical-align: top;
+	padding: 30px 40px 0 30px;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+}
+/*--本日主廚結束--*/
+
+
+/*--客人評論開始--*/
+#comment {
+	background: #EFE9E7;
+	padding: 50px 0;
+	color: #3D1101;
+}
+
+.commentHeader {
+	font-size: 2.4rem;
+	text-align: center;
+
+}
+
+.commentMain {
+	width: 90%;
+	display: table;
+	table-layout: fixed;
+	margin: 50px auto 0px;
+}
+
+.guest {
+	display: table-cell;
+}
+
+.commentMain img {
+	border-radius: 100%;
+	vertical-align: top;
+	display: inline-block;
+}
+
+.commentText {
+	display: inline-block;
+	width: 65%;
+	margin-left: 13px;
+}
+
+.guest h3 {
+	font-size: 1.8rem;
+	margin: 22px 0;
+}
+
+.guest p , .geust h4 {
+	font-size: 1.6rem;
+}
+
+.guest h4 {
+	text-align: right;
+}
+
+@media (max-width: 480px) {
+	.commentMain, .guest {
+		width: 100%;
+		display: block;
+	}
+	.commentMain {
+		margin: 0;
+	}
+	.commentMain img {
+		margin-left: 10px;
+	}
+	.guest {
+		margin-top: 32px;
+	}
+}
+/*--客人評論結束--*/
+
+/*--訂位區開始--*/
+#contact {
+	padding: 50px 0;
+	color: #3D1101;
+	background: rgba(250,250,250,0.70);
+}
+
+#contact h2 {
+	font-size: 2.4rem;
+	text-align: center;
+}
+
+.contactMain {
+	margin-top: 50px;
+	text-align: center;
+}
+
+ .contactMap, .contactData {
+ 	display: inline-block;
+	width: 40%;
+}
+
+.contactMap img {
+	max-width: 100%;
+}
+
+.contactData {
+	text-align: left;
+	display: inline-block;
+	vertical-align: top;
+	font-size: 1.4rem;
+	padding-right: 10%;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	margin-left: 20px;
+}
+
+.contactData input[type="text"] {
+	width: 100%;
+	height: 32px;
+	background: #FFFFFF;
+	border: 1px solid #CCCCCC;
+	-webkit-box-shadow: inset 0px 1px 0px 0px #ECECEC;
+	        box-shadow: inset 0px 1px 0px 0px #ECECEC;
+	border-radius: 3px;
+	margin: 6px 0 12px 0;
+	padding: 5px 0 5px 14px;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	color: #4A4A4A;
+	font-size: 1.6rem;
+}
+
+.contactData input:nth-last-of-type(2) {
+	margin-right: 36px;
+}
+
+.submitButton {
+	text-align: right;
+}
+
+.submitButton input {
+	width: 70px;
+	height: 32px;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	padding: 6px 0;
+	font-size: 1.4rem;
+	text-align: center;
+	border-radius: 3px;
+	font-family: PingFangTC-Regular;
+	color: #FFFFFF;
+	cursor: pointer;
+}
+
+.submitButton input:nth-of-type(1) {
+	background: rgba(0,0,0,0.35);
+}
+
+.submitButton input:nth-of-type(2) {
+	background: #F56C23;
+}
+
+.submitButton input[type="submit"]:hover {
+	background: #100E0E;
+}
+
+@media (max-width: 480px) {
+	.contactMap, .contactData {
+		width: 100%;
+		padding: 0 10px 0 10px;
+		margin: 0;
+		-webkit-box-sizing: border-box;
+		   -moz-box-sizing: border-box;
+		        box-sizing: border-box;
+	}
+}
+
+/*--訂位區結束--*/
+
+/*--底部開始--*/
+footer {
+	width: 100%;
+	background: #EFE9E7;
+	padding: 50px 0;
+	text-align: center;
+}
+
+.footerBox {
+	width: 30%;
+	display: inline-block;
+	padding-right: 20px;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	text-align: left; 
+	color: #3D1101;
+	vertical-align: top;
+}
+
+.footerBox:nth-of-type(3) {
+	text-align: right;
+}
+
+.footerBox h2 {
+	font-size: 2.4rem;
+	margin-bottom: 16px;
+}
+
+.footerBox p, .footerBox li {
+	font-size: 1.6rem;
+}
+
+.footerBox .linkLogo {
+	font-size: 3.6rem;
+	margin-top: 12px;
+}
+
+.linkLogo a:nth-of-type(1) {
+	color: #DB4437;
+}
+.linkLogo a:nth-of-type(2) {
+	color: #41ABE1;
+}
+.linkLogo a:nth-of-type(3) {
+	color: #3A5795;
+}
+
+@media (max-width: 480px) {
+	.footerBox {
+		width: 100%;
+		padding: 0 20px;
+	}
+	.footerBox:nth-of-type(2) {
+		margin: 30px 0;
+	}
+	.footerBox ul {
+		padding-left: 20px;
+	}
+}
+/*--底部結束--*/
